@@ -1,0 +1,62 @@
+{
+  "name": "carstenwindler/cwhtmlcompressor",
+  "type": "typo3-cms-extension",
+  "description": "Todo",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "gzip",
+    "compression"
+  ],
+  "homepage": "http://carstenwindler.de",
+  "authors": [
+    {
+      "name": "Carsten Windler",
+      "email": "carsten@carstenwindler.de",
+      "role": "Developer",
+      "homepage": "http://carstenwindler.de"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "require": {
+    "typo3/cms-core": "^6.2.0|^7|^8"
+  },
+  "require-dev": {
+    "typo3/testing-framework": "^2",
+    "mockery/mockery": "dev-master",
+    "phpunit/phpunit": "^6",
+    "squizlabs/php_codesniffer": "^2"
+  },
+  "autoload": {
+    "psr-4": {
+      "CarstenWindler\\Cwhtmlcompressor\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CarstenWindler\\Cwhtmlcompressor\\Tests\\": "Tests",
+      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+    }
+  },
+  "replace": {
+    "cwhtmlcompressor": "self.version",
+    "typo3-ter/cwhtmlcompressor": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/cwhtmlcompressor ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/cwhtmlcompressor"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}
