@@ -1,7 +1,8 @@
 {
   "name": "carstenwindler/cwhtmlcompressor",
   "type": "typo3-cms-extension",
-  "description": "Todo",
+  "description": "gzip compress HTML output",
+  "version": "1.0.0",
   "keywords": [
     "TYPO3",
     "extension",
@@ -19,7 +20,7 @@
   ],
   "license": "GPL-2.0+",
   "require": {
-    "typo3/cms-core": "^6.2.0|^7|^8"
+    "typo3/cms-core": "^6.2.0|^7|^8|^9"
   },
   "require-dev": {
     "typo3/testing-framework": "^2",
