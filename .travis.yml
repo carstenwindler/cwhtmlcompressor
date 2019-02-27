@@ -32,7 +32,6 @@ before_script:
       typo3/cms-install="$TYPO3_VERSION" \
       typo3/cms-scheduler="$TYPO3_VERSION" \
       typo3/cms-recordlist="$TYPO3_VERSION" \
-      $PREFER_LOWEST
   # Restore composer.json
   - git checkout composer.json
   - export TYPO3_PATH_WEB=$PWD/.Build/Web
@@ -80,9 +79,3 @@ jobs:
     - stage: test
       php: 7.0
       env: TYPO3_VERSION=^8.7.22
-    - stage: test
-      php: 7.0
-      env: TYPO3_VERSION=^8.7.22 PREFER_LOWEST="--prefer-lowest"
-    - stage: test
-      php: 7.2
-      env: TYPO3_VERSION="dev-master"
